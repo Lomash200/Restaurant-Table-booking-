@@ -1,0 +1,262 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root{
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+    --first-color: #069C54;
+    --first-color-alt: #048654;
+    --title-color: #F1F3F2;
+    --text-color: #C7D1CC;
+    --text-color-light: #A6A6A6;
+    --body-color: #1D2521;
+    --container-color: #27302C;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    @media screen and (min-width: 768px){
+        --biggest-font-size: 4rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Margenes ==========*/
+    --mb-1: .5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+
+/*========== BASE ==========*/
+*,::before,::after{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+h1,h2,h3,ul,p{
+    margin: 0;  
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+.menu{
+    &__container{
+        .menu__content{
+            .star{
+                .starIcon{
+                    color: var(--text-color);
+                    font-size: var(--h3-font-size);
+                }
+            }
+        }
+    }
+}
+
+// MAIN STYLING ===================================================>
+
+.mainAddItems{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--body-color);
+    margin-top: 4rem;
+
+    .container {
+      background-color: var(--container-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem;
+      width: 50%;
+      height: 500px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 3px -1px rgba(0, 0, 0, 0.5);
+      position: relative;
+    
+        span{
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: var(--h3-font-size);
+            color: var(--text-color);
+            
+            &:hover{
+                cursor: pointer;
+                color: red;
+            }
+        }
+    
+        .heading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+    
+            h3{
+                color: var(--title-color);
+            }
+            .header {
+                font-size: 32px;
+                font-weight: 500;
+                margin-top: 15px;
+                margin-bottom: 10px;
+                color: var(--mainTitle-color);
+                font-family: var(--body-font);
+            }
+
+            .profile{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 45px;
+                width: 45px;
+                border-radius: 50%;
+                background-color: var(--body-color);
+                border: 2px solid rgb(218, 214, 214);
+                transition: .3s;
+
+                i{
+                    font-size: var(--h3-font-size);
+                    color: var(--text-color);
+                }
+
+                &:hover{
+                    cursor: pointer;
+                    border: 2px solid var(--first-color-alt);
+
+                }
+            }
+        }
+
+        .formDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            width: 80%;
+            
+            form{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: .5rem;
+                margin-top: 1rem;
+            
+            .detail {
+                width: 220px;
+                margin: 5px;
+                padding: 10px;
+                font-size: 14px;
+                font-family: var(--body-font);
+                color: var(--body-color);
+                border: 2px solid rgb(218, 214, 214);
+                border-radius: 15px;
+                border: 1px solid #27302C;
+        
+                &::placeholder{
+                    color: var(--text-color-light);
+                }
+            }
+
+            .category{
+                height: 40px;
+                padding: 0 4px;
+                color: #1D2521;
+            }
+            
+            
+            .btn {
+                width: 30%;
+                height: 40px;
+                border: hidden;
+                border-radius: 20px;
+                color: var(--body-color);
+                font-weight: 600;
+                font-size: 16px;
+                margin: 10px 0px;
+                background-color: var(--title-color-light);
+        
+                &:hover{
+                    background-color: var(--title-color);
+                    cursor: pointer;
+                }
+            }
+            
+            #addItembtn{
+                text-decoration: none;
+                padding: 5px 15px;
+                margin-top: 1.5rem;
+                color: var(--title-color);
+                background-color: var(--first-color);
+
+                &:hover{
+                    background-color: var(--first-color-alt);
+                    cursor: pointer;
+                }
+                
+            }
+    
+            .errortxt {
+                color: red;
+                margin: 5px 0px;
+                font-family:serif;
+            }
+          }  
+        }
+   }
+  }

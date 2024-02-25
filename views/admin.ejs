@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/Admin/admin.css">
+    <link rel="stylesheet" href="/stylesheets/Index/style.css">
+    <link rel="stylesheet" href="/stylesheets/Menu/menu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
+    <title>Admin</title>
+</head>
+<body>
+
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="/" class="nav__logo">logo.</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <h3>ADMIN PANNEL</h3>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MENU OF THE WEEK   -->
+    <section class="menu section bd-container" id="menu">
+        <h2 class="admin">ADMIN PANNEL</h2>
+        <span class="section-subtitle">Special</span>
+        <h2 class="section-title">Menu of the week</h2>
+
+        <div class="menu__container bd-grid">
+            <% menuOfWeekItems.forEach(function(itemdetail){ %>
+            <div class="menu__content">
+                <a class="star" href="#" onclick="removeMenuOfWeek('<%= itemdetail._id %>')"><i class="ri-star-fill starIcon"></i></a>
+                <img src="<%=itemdetail.image%>" alt="" class="menu__img">
+                <h3 class="menu__name"><%=itemdetail.title%></h3>
+                <span class="menu__detail"><%=itemdetail.caption%></span>
+                <span class="menu__preci">₹<%=itemdetail.price%></span>
+                <a href="#" class="button menu__button"><i class="ri-delete-bin-line"></i></a>
+            </div>
+            <% }) %>
+        </div>
+    </section>
+    
+    <!-- SALADS MENU -->
+    <section class="mainMenu section bd-container" id="menu">
+
+        <div class="mainMenu__heading">
+            <h1>Salads</h1>
+            <span>🥬</span>
+        </div>
+        <div class="mainMenu__container bd-grid">
+
+            <% saladItems.forEach(function(itemdetail){ %>
+            <div class="mainMenu__content">
+                <a class="star" href="#" onclick="setMenuOfWeek('<%= itemdetail._id %>')"><i class="ri-star-line starIcon"></i></a>
+                <img src="<%=itemdetail.image%>" alt="" class="mainMenu__img">
+                <h3 class="mainMenu__name"><%=itemdetail.title%></h3>
+                <span class="mainMenu__detail"><%=itemdetail.caption%></span>
+                <span class="mainMenu__preci">₹<%=itemdetail.price%></span>
+                <a href="#" class="button mainMenu__button"><i class="ri-delete-bin-line"></i></a>
+            </div>
+            <% }) %>
+                
+        </div>
+    </section>
+
+    <!-- VEG MENU -->
+    <section class="mainMenu section bd-container" id="menu">
+
+        <div class="mainMenu__heading">
+            <h1>Vegitables</h1>
+            <span>🥬</span>
+        </div>
+
+        <div class="mainMenu__container bd-grid">
+
+            <% saladItems.forEach(function(itemdetail){ %>
+            <div class="mainMenu__content">
+                <a class="star" href="#" onclick="setMenuOfWeek('<%= itemdetail._id %>')"><i class="ri-star-line starIcon"></i></a>
+                <img src="<%=itemdetail.image%>" alt="" class="mainMenu__img">
+                <h3 class="mainMenu__name"><%=itemdetail.title%></h3>
+                <span class="mainMenu__detail"><%=itemdetail.caption%></span>
+                <span class="mainMenu__preci">₹<%=itemdetail.price%></span>
+                <a href="#" class="button mainMenu__button" onclick="deleteMenuItem('<%= itemdetail._id %>')"><i class="ri-delete-bin-line"></i></a>  
+            </div>
+            <% }) %>
+            
+            
+
+        </div>
+    </section>
+
+    <!-- ADD MENU ITEMS -->
+
+
+      <div class="mainAddItems">
+        <div class="container">
+    
+          <div class="heading">
+            <h3>Add Menu Items</h3>
+            <p class="header">Fill Item's Details</p>
+            
+            <div class="profile">
+              <i class="ri-file-image-line"></i>
+            </div>
+    
+          </div>
+      
+            <div class="formDiv">
+                <form action="/additem" method="post" enctype="multipart/form-data">
+                    <input name="image" type="file" id="profileInput" hidden required class="detail">
+                    <input name="title" type="text" placeholder="Dish Name" required class="detail" />
+                    <input name="caption" type="text" placeholder="Caption" class="detail" />
+                    <input name="price" type="number" placeholder="Price" required class="detail" />
+          
+                      <select class="detail category" id="category" name="category" required>
+                          <option value="">Select category</option>
+                          <option value="Salad">Salad</option>
+                          <option value="Vegetable">Vegetable</option>
+                          <!-- Add more categories as needed -->
+                      </select>
+          
+          
+                    <input type="submit" class="btn int" id="addItembtn" value="Add Item">            <!-- we can use button as well by giving type="submit" in attribute -->
+                  </form>
+            </div>
+    
+          
+        </div>
+      </div>
+    
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer section bd-container">
+        <div class="footer__container bd-grid">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">Logo.</a>
+                <span class="footer__description">Restaurant</span>
+                <div>
+                    <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Services</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Delivery</a></li>
+                    <li><a href="#" class="footer__link">Pricing</a></li>
+                    <li><a href="#" class="footer__link">Fast food</a></li>
+                    <li><a href="#" class="footer__link">Reserve your spot</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Information</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Event</a></li>
+                    <li><a href="#" class="footer__link">Contact us</a></li>
+                    <li><a href="#" class="footer__link">Privacy policy</a></li>
+                    <li><a href="#" class="footer__link">Terms of services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Adress</h3>
+                <ul>
+                    <li>Silicon Ciy</li>
+                    <li>SRR Avenue</li>
+                    <li>6265536685</li>
+                    <li>lomashbadole042@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2024 Lomash. All right reserved</p>
+    </footer>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/admin.js"></script>
+</body>
+</html>

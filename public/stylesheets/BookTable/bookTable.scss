@@ -1,0 +1,279 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root{
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+    --first-color: #069C54;
+    --first-color-alt: #048654;
+    --title-color: #F1F3F2;
+    --text-color: #C7D1CC;
+    --text-color-light: #A6A6A6;
+    --body-color: #1D2521;
+    --container-color: #27302C;
+    --input-feild-color: #d8e0ef;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    @media screen and (min-width: 768px){
+        --biggest-font-size: 4rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Margenes ==========*/
+    --mb-1: .5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+
+/*========== BASE ==========*/
+*,::before,::after{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+h1,h2,h3,ul,p{
+    margin: 0;  
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+.bookTable{
+    padding: 3rem 0 1rem ;
+    &__data{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        align-items: flex-start;
+
+        span{
+            font-size: 2rem;
+        }
+       
+    }
+    &__description{
+        margin-bottom: var(--mb-3);
+    }
+    &__img{
+        width: 280px;
+        border-radius: .5rem;
+        justify-self: center;
+    }
+
+    .formDiv{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        .inputForm{
+            display: flex;
+            width: 95%;
+           
+
+            form{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+
+                .inputFeild{
+                    display: flex;
+                    margin: 0 2rem;
+                    width: 30%;
+                    height: 20%;
+                    flex-direction: column;
+
+                    label{
+                        color: white;
+                    }
+                    input{
+                        outline: none;
+                        border: none;
+                        border-radius: .5rem 0 .5rem 0;
+                        height: 40px;
+                        padding: 2px 10px;
+                        margin-top: 3px;
+                        background-color: var(--input-feild-color);
+                        color: black;
+                        font-weight: var(--font-semi-bold);
+                    }
+
+                    button{
+                        width: 7rem;
+                        align-self: center;
+                        font-weight: 550;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+//MEDIA QUERIES =================================>
+
+@media screen and (max-width: 576px){
+    .bookTable{
+        
+        .bookTable__container{   
+
+            .bookTable__data{
+                padding-left: 1rem;
+                span{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .formDiv{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 16rem;
+                height: 16rem;
+                margin-bottom: 1.8rem;
+            }
+
+            .inputForm{
+                width: 100%;
+                
+               form{
+                align-items: center;
+                gap: 0.95rem;
+                .inputFeild{
+                    display: flex;
+                    align-items: center;
+                    label{
+                        width: 20vh;
+                        padding-left: .6rem;
+                    }
+                    input{
+                        width: 18vh;
+                        height: 2rem;
+                    }
+                    button{
+                        margin-top: 1rem;
+                    }
+                }
+               }
+                
+                
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 767px) and (max-width: 1024px){
+    .bookTable{
+        
+        .bookTable__container{   
+
+            .bookTable__data{
+                padding-left: 1rem;
+                span{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .formDiv{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 16rem;
+                height: 16rem;
+                margin-bottom: 1.8rem;
+            }
+
+            .inputForm{
+                width: 100%;
+                
+               form{
+                align-items: center;
+                gap: 0.95rem;
+                .inputFeild{
+                    display: flex;
+                    align-items: center;
+                    label{
+                        width: 20vh;
+                        padding-left: .6rem;
+                    }
+                    input{
+                        width: 18vh;
+                        height: 2rem;
+                    }
+                    button{
+                        margin-top: 1rem;
+                    }
+                }
+               }
+                
+                
+            }
+        }
+    }
+}
+
+

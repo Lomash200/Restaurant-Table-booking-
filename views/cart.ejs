@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="/stylesheets/Cart/cart.css">
+    <link rel="stylesheet" href="/stylesheets/Index/style.css">
+    <title>Cart</title>
+</head>
+<body>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="/" class="nav__logo">logo.</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="/bookTable" class="nav__link">Book Table</a></li>
+                    <li class="nav__item"><a href="/menu" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="/aboutUs" class="nav__link">About Us</a></li>
+                    <li class="nav__item"><a href="/contact" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="/cart" class="nav__link active-link"><i class="ri-shopping-cart-line"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+
+<div class="main">
+
+    <div class="main__cart">
+        <div class="cartHeader">
+            <div class="left">
+                <h1>Cart</h1>
+                <p>Your delicious order</p>
+            </div>
+            <div class="right">
+                <button class="pay">Pay Now</button>
+            </div>
+        </div>
+
+        <% orderitem.forEach(function(itemdetail){ %>
+        <div class="cartItems">
+            <div class="left">
+                <h3><%=itemdetail.title%></h3>
+                <p>Qty. 1</p>
+            </div>
+            <div class="right">
+               <span>- </span><h3> ₹ <%=itemdetail.price%></h3> <span>+ </span> <i class="ri-delete-bin-line"></i>
+            </div>
+        </div>
+        <% }) %>
+
+        <button class="order">Order</button>
+    </div>
+</div>
+
+<!--========== FOOTER ==========-->
+<footer class="footer section bd-container">
+    <div class="footer__container bd-grid">
+        <div class="footer__content">
+            <a href="#" class="footer__logo">Logo.</a>
+            <span class="footer__description">Restaurant</span>
+            <div>
+                <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Services</h3>
+            <ul>
+                <li><a href="#" class="footer__link">Delivery</a></li>
+                <li><a href="#" class="footer__link">Pricing</a></li>
+                <li><a href="#" class="footer__link">Fast food</a></li>
+                <li><a href="#" class="footer__link">Reserve your spot</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Information</h3>
+            <ul>
+                <li><a href="#" class="footer__link">Event</a></li>
+                <li><a href="#" class="footer__link">Contact us</a></li>
+                <li><a href="#" class="footer__link">Privacy policy</a></li>
+                <li><a href="#" class="footer__link">Terms of services</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Adress</h3>
+            <ul>
+                <li>Silicon Ciy</li>
+                <li>SRR Avenue</li>
+                <li>6265536685</li>
+                <li>lomashbadole042@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="footer__copy">&#169; 2024 Lomash. All right reserved</p>
+</footer>
+
+<!--========== SCROLL REVEAL ==========-->
+<script src="https://unpkg.com/scrollreveal"></script>
+    
+<script src="/javascripts/main.js"></script>
+
+</body>
+</html>

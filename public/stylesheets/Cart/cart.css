@@ -1,0 +1,213 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  /*========== Colors ==========*/
+  --first-color: #069C54;
+  --first-color-alt: #048654;
+  --title-color: #F1F3F2;
+  --text-color: #C7D1CC;
+  --text-color-light: #A6A6A6;
+  --body-color: #1D2521;
+  --container-color: #27302C;
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  /*========== Margenes ==========*/
+  --mb-1: .5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+@media screen and (min-width: 768px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/*========== BASE ==========*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3, ul, p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 5rem;
+  margin: 4rem 0;
+}
+.main__cart {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+}
+.main__cart .cartHeader {
+  align-self: flex-start;
+  margin-bottom: 2rem;
+  margin-left: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 83%;
+}
+.main__cart .cartHeader .left h1 {
+  color: var(--first-color);
+  font-size: var(--h1-font-size);
+}
+.main__cart .cartHeader .left p {
+  color: var(--text-color);
+  position: relative;
+  top: -4px;
+}
+.main__cart .cartHeader .right button {
+  height: 35px;
+  width: 95px;
+  outline: none;
+  color: var(--text-color);
+  background-color: rgb(99, 59, 172);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: var(--font-semi-bold);
+}
+.main__cart .cartHeader .right button:hover {
+  background-color: rgb(90, 55, 155);
+  cursor: pointer;
+}
+.main__cart .cartItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 80%;
+  padding: 0.1rem 2rem;
+  margin-top: 1rem;
+  border: 1px solid #434343;
+  border-radius: 1rem;
+  background-color: var(--container-color);
+}
+.main__cart .cartItems .left p {
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+}
+.main__cart .cartItems .right {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.main__cart .cartItems .right i {
+  margin-left: 5px;
+}
+.main__cart .cartFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  width: 73%;
+}
+.main__cart .cartFooter .left p {
+  font-size: var(--h3-font-size);
+}
+.main__cart .cartFooter .left span {
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+  position: relative;
+  top: -5px;
+  left: 4px;
+}
+.main__cart .order {
+  height: 35px;
+  width: 85px;
+  outline: none;
+  color: var(--text-color);
+  background-color: var(--first-color-alt);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: var(--font-semi-bold);
+}
+.main__cart .order:hover {
+  background-color: var(--first-color);
+  cursor: pointer;
+}
+
+/*========== MEDIA QUERIES ==========*/
+@media screen and (max-width: 576px) {
+  .main {
+    padding: 0;
+    margin: 0;
+  }
+  .main__cart {
+    width: 100%;
+  }
+  .main__cart .cartHeader {
+    margin: 1rem;
+    width: 95%;
+    padding: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .main__cart .cartItems {
+    height: 65px;
+    padding: 1rem;
+  }
+}/*# sourceMappingURL=cart.css.map */

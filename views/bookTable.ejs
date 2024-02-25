@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="/stylesheets/Index/style.css">
+    <link rel="stylesheet" href="/stylesheets/BookTable/bookTable.css">
+    <title>Book Table</title>
+</head>
+<body>
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="/" class="nav__logo">logo.</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="/bookTable" class="nav__link active-link">Book Table</a></li>
+                    <li class="nav__item"><a href="/menu" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="/aboutUs" class="nav__link">About Us</a></li>
+                    <li class="nav__item"><a href="/contact" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="/cart" class="nav__link"><i class="ri-shopping-cart-line"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="bookTable section bd-container">
+        <div class="bookTable__container  bd-grid">
+            <div class="bookTable__data">
+                <span class="section-subtitle bookTable__initial">Reserve your table now.</span>
+                <h3>We're excited to welcome <br>you soon.</h3>
+                
+            </div>
+
+        </div>
+        <div class="bookTable__container formDiv">
+            
+            <img src="/images/BookTable.jpg" class="bookTable__img">
+            <div class="inputForm">
+                
+                <form action="/book" method="POST">
+                    <div class="inputFeild">
+                        <label for="name">Name:</label>
+                        <input type="text" placeholder="Your Name" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="inputFeild">
+                        <label for="telephone">Telephone Number:</label>
+                        <input type="tel" placeholder="Your Number" id="telephone" name="telephone" required>
+                    </div>
+
+                    <div class="inputFeild">
+                        <label for="email">Email Address:</label>
+                        <input type="email" placeholder="Your Email" id="email" name="email" required>
+                    </div>
+
+                    <div class="inputFeild">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="inputFeild">
+                        <label for="time">Time:</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+
+                    <div class="inputFeild">
+                        <label for="guests">Number of Guests:</label>
+                        <input type="number" placeholder="Enter Here" id="guests" name="guests" min="1" required>
+                    </div> 
+
+                    <div class="inputFeild">
+                        <button class="button" type="submit" value="Submit">BOOK</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer section bd-container">
+        <div class="footer__container bd-grid">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">Logo.</a>
+                <span class="footer__description">Restaurant</span>
+                <div>
+                    <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Services</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Delivery</a></li>
+                    <li><a href="#" class="footer__link">Pricing</a></li>
+                    <li><a href="#" class="footer__link">Fast food</a></li>
+                    <li><a href="#" class="footer__link">Reserve your spot</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Information</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Event</a></li>
+                    <li><a href="#" class="footer__link">Contact us</a></li>
+                    <li><a href="#" class="footer__link">Privacy policy</a></li>
+                    <li><a href="#" class="footer__link">Terms of services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Adress</h3>
+                <ul>
+                    <li>Silicon Ciy</li>
+                    <li>SRR Avenue</li>
+                    <li>6265536685</li>
+                    <li>lomashbadole042@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2024 Lomash. All right reserved</p>
+    </footer>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <script src="/javascripts/main.js"></script>
+</body>
+</html>
